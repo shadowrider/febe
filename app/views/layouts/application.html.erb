@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Febe</title>
-  <%= stylesheet_link_tag    "application" %>
+  <title>Fast and Easy Book Exchange</title>
+  <%= stylesheet_link_tag    "css/screen" %>
+  <!--[if IE]><%= stylesheet_link_tag "css/ie" %><![endif]-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div class="container">
+      <div id="header" class="span-24 last">
+        <h1 id="febe_logo"><img src="" alt="application logo" class="header_logo"></h1>
+        <hr>
+      </div>
+      <div id="subheader" class="span-24 last">
+        <h3>Welcome, username! What would you like to do today?</h3>
+        <hr>
+      </div>
+      <div id="nav_menu" class="span-18">Navigation Menu</div>
+      <div id="search_bar" class="span-6 last">Search bar</div>
+      <div id="main" class="span-24 last">
+        <div id="left_sidebar" class="span-5 ">
+          <h2>Sort</h2>
+          <hr>
+          <h2>Filter</h2>
+        </div>
+        <div id="content" class="span-18 prepend-1 last">
+            <%= yield %>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
