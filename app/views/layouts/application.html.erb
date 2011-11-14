@@ -3,6 +3,7 @@
 <head>
   <title>Fast and Easy Book Exchange</title>
   <%= stylesheet_link_tag    "css/screen" %>
+  <%= stylesheet_link_tag "css/style" %>
   <!--[if IE]><%= stylesheet_link_tag "css/ie" %><![endif]-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -17,15 +18,57 @@
         <h3>Welcome, username! What would you like to do today?</h3>
         <hr>
       </div>
-      <div id="nav_menu" class="span-18">Navigation Menu</div>
-      <div id="search_bar" class="span-6 last">Search bar</div>
+      <div id="nav_menu" class="span-16">
+        <ul class="menu">
+          <li>
+            <input id="buy_books" type="button" class="menu_item" value="Search for Books">
+          </li>
+          <li>
+            <input id="sell_books" type="button" class="menu_item" value="Sell Books">
+          </li>
+          <li>
+            <a href="#">Browse all Books</a>
+          </li>
+        </ul>
+      </div>
+      <div id="search_bar_menu" class="span-8 last">
+        <input id="search_bar" class="search_bar" type="text">
+        <input id="search_button" class="menu_item search_button" type="submit" value="Search">
+      </div>
       <div id="main" class="span-24 last">
-        <div id="left_sidebar" class="span-5 ">
+        <div id="left_sidebar" class="span-5">
           <h2>Sort</h2>
-          <hr>
+          <hr class="header_line">
+          <ul class="side_menu">
+            <li class="chosen">By Title</li>
+            <li>By Author</li>
+            <li>By Course</li>
+            <li>By Price</li>
+          </ul>
           <h2>Filter</h2>
+          <hr class="header_line">
+          <ul class="side_menu">
+            <li>
+              Lowest Price:
+              <input class="price_field" type="text">
+            </li>
+            <li>
+              Highest Price:
+              <input class="price_field" type="text">
+            </li>
+            <li>
+              Condition:
+              <select>
+                <option>As New</option>
+                <option>Fine</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+              </select>
+            </li>
+          </ul>
         </div>
-        <div id="content" class="span-18 prepend-1 last">
+        <div id="books" class="span-18 prepend-1 last">
             <%= yield %>
         </div>
       </div>
