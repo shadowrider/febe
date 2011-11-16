@@ -1,0 +1,11 @@
+/**
+ * Created by JetBrains RubyMine.
+ * User: ShadowRider
+ * Date: 11-11-15
+ * Time: 11:10 PM
+ * To change this template use File | Settings | File Templates.
+ */
+ $('<%= escape_javascript(render(:partial => @book))%>')
+  .appendTo('#books')
+  .hide()
+  .fadeIn()

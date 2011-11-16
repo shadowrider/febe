@@ -1,25 +1,9 @@
-<h2>All available Books for Sale:</h2>
-<hr class="header_line">
-<% @books.each do |book| %>
-    <div id="book" class="book_item span-18 last">
-        <h3 class="title span-18 last"><%= book.title %></h3>
-        <div class="span-2"><%= image_tag(book.image_url, class: 'cover_image') %></div>
-        <div class="span-13">
-          <ul class="book_information">
-            <li>by <%= book.author %></li>
-            <li>Course: <%= book.course %></li>
-            <li>Condition: <%= book.condition %></li>
-          </ul>
-        </div>
-        <div class="span-3 last">
-          <ul class="book_information">
-            <li class="price"><%= number_to_currency(book.price) %></li>
-            <li class="contact-image"><a href="#"><%= image_tag("email.png", alt: "Contact the Seller") %></a></li>
-          </ul>
-        </div>
-    </div>
-<% end %>
-<table>
+<div id="books" class="span-18 prepend-1 last">
+    <h2>All available Books for Sale:</h2>
+    <hr class="header_line">
+    <%= render @books %>
+</div>
+<table style="display: none;">
   <tr>
     <th>Isbn</th>
     <th>Title</th>
@@ -45,5 +29,44 @@
 </table>
 
 <br />
+<div id="modal_w">
+<%= form_for Book.new, :remote => true do |f| %>
+  <div class="field">
+    <%= f.label :isbn %><br />
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br />
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br />
+    <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :is_for_sale %><br />
+    <%= f.select(:is_for_sale, [['Yes',true],['No',false]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
 
-<%= link_to 'New Book', new_book_path %>
+<a href="#" id="add_book">New Book</a>
