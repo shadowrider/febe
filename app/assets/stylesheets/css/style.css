@@ -1,3 +1,8 @@
+/*HEADER*/
+#header .header_logo {
+    height: 133px;
+    width: 200px;
+}
 /*NAVIGATION MENU*/
 #nav_menu .menu {
     padding: 0;
@@ -76,4 +81,28 @@
 }
 #books .book_item .book_information .contact-image {
     margin: -10px 0 0 -5px;
+}
+
+#simplemodal-container {
+    border: 5px solid rgba(51, 102, 255, 0.8);
+    border-radius: 5px 5px 5px 5px;
+    background: white;
+    display: none;
+    padding: 15px;
+}
+#simplemodal-container a.modalCloseImg {
+	background:url(x.png) no-repeat; /* adjust url as required */
+	width:25px;
+	height:29px;
+	display:inline;
+	z-index:3200;
+	position:absolute;
+	top:-15px;
+	right:-18px;
+	cursor:pointer;
+}
+#simplemodal-overlay {background-color:#000;}
+
+#add_book{
+    font-size: 150%;
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111114045402) do
+ActiveRecord::Schema.define(:version => 20111117023452) do
 
   create_table "books", :force => true do |t|
     t.string   "isbn"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(:version => 20111114045402) do
     t.string   "condition"
     t.string   "course"
     t.boolean  "is_for_sale"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
 end

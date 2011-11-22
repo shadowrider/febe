@@ -1,6 +1,6 @@
 <div id="book" class="book_item span-18 last">
   <h3 class="title span-18 last"><%= book.title %></h3>
-  <div class="span-2"><%= image_tag(book.image_url, class: 'cover_image') %></div>
+  <div class="span-2"><%= image_tag(book.cover.url(:thumb), class: 'cover_image') %></div>
   <div class="span-13">
     <ul class="book_information">
         <li>by <%= book.author %></li>

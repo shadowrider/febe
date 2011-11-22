@@ -12,38 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :isbn %><br />
-    <%= f.text_field :isbn %>
+     <%= f.label :isbn %><br />
+     <%= f.text_field :isbn %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+     <%= f.label :title %><br />
+     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
+     <%= f.label :author %><br />
+     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :course %><br />
-    <%= f.text_field :course %>
+     <%= f.label :course %><br />
+     <%= f.text_field :course %>
   </div>
   <div class="field">
-    <%= f.label :condition %><br />
-    <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
+     <%= f.label :condition %><br />
+     <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
+  </div>
+  <div class="field" style="display: none">
+     <%= f.label :is_for_sale %><br />
+     <%= f.select(:is_for_sale, [['Yes',true],['No',false]]) %>
   </div>
   <div class="field">
-    <%= f.label :is_for_sale %><br />
-    <%= f.select(:is_for_sale, [['Yes',true],['No',false]]) %>
+     <%= f.label :cover %><br />
+     <%= f.file_field :cover %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+     <%= f.label :price %><br />
+     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+     <%= f.submit %>
   </div>
 <% end %>

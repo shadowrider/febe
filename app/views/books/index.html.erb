@@ -1,6 +1,7 @@
-<div id="books" class="span-18 prepend-1 last">
+<div id="books" class="span-18 last">
     <h2>All available Books for Sale:</h2>
     <hr class="header_line">
+    <a href="#" id="add_book">Add Book</a>
     <%= render @books %>
 </div>
 <table style="display: none;">
@@ -29,44 +30,44 @@
 </table>
 
 <br />
-<div id="modal_w">
-<%= form_for Book.new, :remote => true do |f| %>
-  <div class="field">
-    <%= f.label :isbn %><br />
-    <%= f.text_field :isbn %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :course %><br />
-    <%= f.text_field :course %>
-  </div>
-  <div class="field">
-    <%= f.label :condition %><br />
-    <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
-  </div>
-  <div class="field">
-    <%= f.label :is_for_sale %><br />
-    <%= f.select(:is_for_sale, [['Yes',true],['No',false]]) %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div id="modal_w" style="display: none">
+    <%= form_for Book.new, :remote => true do |f| %>
+      <div class="field">
+        <%= f.label :isbn, "ISBN" %><br />
+        <%= f.text_field :isbn %>
+      </div>
+      <div class="field">
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :author %><br />
+        <%= f.text_field :author %>
+      </div>
+      <div class="field">
+        <%= f.label :course %><br />
+        <%= f.text_field :course %>
+      </div>
+      <div class="field">
+        <%= f.label :condition %><br />
+        <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
+      </div>
+      <div class="field" style="display: none">
+        <%= f.label :is_for_sale %><br />
+        <%= f.select(:is_for_sale, [['Yes',true],['No',false]]) %>
+      </div>
+      <div class="field">
+        <%= f.label :cover %><br />
+        <%= f.file_field :cover %>
+      </div>
+      <div class="field">
+        <%= f.label :price %><br />
+        <%= f.text_field :price %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Add book", :class => 'menu_item push-5' %>
+      </div>
+    <% end %>
 </div>
 
-<a href="#" id="add_book">New Book</a>
+

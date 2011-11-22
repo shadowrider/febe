@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'cancan', '1.6.7'
 gem 'devise', '1.4.9'
+gem "paperclip", "~> 2.4"
 
 
 # Gems used only for assets and not required
