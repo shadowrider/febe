@@ -13,7 +13,14 @@
     padding-left: 10px;
 }
 .menu_item {
-    background: rgba(51, 102, 255, 0.8);
+    background: #7abcff; /* Old browsers */
+    background-image: -moz-linear-gradient(top,  #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 3px 3px 3px 3px;
     color: white;
@@ -61,6 +68,15 @@
     font-size: 160%;
     padding: 15px 0 0 25px;
 }
+#books .book_item .operations{
+    padding: 15px 0 0 55px;
+}
+#books .book_item .edit{
+    padding: 0 7px 0 10px;
+}
+#books .book_item .delete{
+
+}
 #books .book_item .cover_image{
     height: 91px;
     margin-top: -10px;
@@ -103,6 +119,42 @@
 }
 #simplemodal-overlay {background-color:#000;}
 
-#add_book{
-    font-size: 150%;
+#books .book_controls {
+    list-style: none;
+    margin: 0.5em 0 0.5em 0;
+    padding:0;
+}
+#books .book_controls li {
+    display: inline;
+    padding-left: 2px;
+}
+
+#books .book_controls .button {
+    height: 25px;
+    font-size: 100%;
+}
+#books .book_controls .add_book {
+    background: url('add_book.png') no-repeat 5% 50%, -moz-linear-gradient(top,  #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: url('add_book.png') no-repeat 5% 50%, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: url('add_book.png') no-repeat 5% 50%, -webkit-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: url('add_book.png') no-repeat 5% 50%, -o-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: url('add_book.png') no-repeat 5% 50%, -ms-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: url('add_book.png') no-repeat 5% 50%, linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+    margin-right: 22px;
+    padding-left: 25px;
+    width: 100px;
+}
+#books .book_controls .hide_button {
+    width: 60px;
+}
+#books .book_controls .delete_button {
+    margin-right: 370px;
+    width: 60px;
+}
+#books .book_controls .select_all_button {
+    width: 80px;
+}
+.line {
+    margin: 0;
 }

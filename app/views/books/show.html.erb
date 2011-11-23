@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Isbn:</b>
+  <b>ISBN:</b>
   <%= @book.isbn %>
 </p>
 
@@ -24,19 +24,14 @@
   <b>Condition:</b>
   <%= @book.condition %>
 </p>
-
-<p>
-  <b>IsForSale:</b>
-  <%= @book.is_for_sale? %>
-</p>
 <p>
   <b>Image url:</b>
-  <%= @book.image_url %>
+  <%= image_tag(@book.cover.url(:thumb), class: 'cover_image') %>
 </p>
 
 <p>
   <b>Price:</b>
-  <%= @book.price %>
+  <%= number_to_currency(@book.price) %>
 </p>
 
 

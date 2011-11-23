@@ -1,5 +1,15 @@
 <div id="book" class="book_item span-18 last">
-  <h3 class="title span-18 last"><%= book.title %></h3>
+  <div class="span-18 last">
+    <h3 class="title span-14"><%= book.title %></h3>
+    <div class="span-2 last operations">
+        <%= link_to(edit_book_path(book), class: 'edit') do %>
+            <%= image_tag("edit.png", alt: "Delete This Book") %>
+        <% end %>
+        <%= link_to(book, confirm: 'Are you sure?', method: :delete, class: 'delete') do %>
+            <%= image_tag("delete.png", alt: "Delete This Book") %>
+        <% end %>
+    </div>
+  </div>
   <div class="span-2"><%= image_tag(book.cover.url(:thumb), class: 'cover_image') %></div>
   <div class="span-13">
     <ul class="book_information">

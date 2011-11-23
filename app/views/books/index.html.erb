@@ -1,34 +1,23 @@
 <div id="books" class="span-18 last">
-    <h2>All available Books for Sale:</h2>
-    <hr class="header_line">
-    <a href="#" id="add_book">Add Book</a>
+    <div class="span-18 last">
+        <ul class="book_controls">
+          <li>
+            <input type="button" id="add_book" value="Add a Book" class="menu_item add_book button">
+          </li>
+          <li>
+            <input type="button" id="hide_books" value="Hide" class="menu_item button hide_button">
+          </li>
+          <li>
+            <input type="button" id="delete_books" value="Delete" class="menu_item button delete_button">
+          </li>
+          <li>
+            <input type="button" id="select_all_books" value="Select All" class="menu_item button select_all_button">
+          </li>
+        </ul>
+    </div>
+    <hr class="line">
     <%= render @books %>
 </div>
-<table style="display: none;">
-  <tr>
-    <th>Isbn</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image url</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @books.each do |book| %>
-  <tr>
-    <td><%= book.isbn %></td>
-    <td><%= book.title %></td>
-    <td><%= book.image_url %></td>
-    <td><%= book.price %></td>
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 <div id="modal_w" style="display: none">
     <%= form_for Book.new, :remote => true do |f| %>
@@ -50,7 +39,7 @@
       </div>
       <div class="field">
         <%= f.label :condition %><br />
-        <%= f.select(:condition, [['As New',"As New"],['Fine','Fine'],['Good','Good'],['Fair','Fair'],['Poor','Poor']]) %>
+        <%= f.select(:condition, [['Like New',"Like New"],['Excellent','Excellent'],['Good','Good'],['Acceptable','Acceptable'],['Poor','Poor']]) %>
       </div>
       <div class="field" style="display: none">
         <%= f.label :is_for_sale %><br />

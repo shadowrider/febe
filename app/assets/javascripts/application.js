@@ -21,7 +21,7 @@ $(document).ready(function() {
            onClose: function (dialog) {
 	            dialog.data.fadeOut('fast', function () {
 		            dialog.container.slideUp('fast', function () {
-			        dialog.overlay.fadeOut('fast', function () {
+			        dialog.overlay.fadeOut('fastw', function () {
 				         $.modal.close(); // must call this!
 			        });
 		        });
